@@ -33,7 +33,7 @@ namespace lab1
             int c = b;
             float d = c;
             double e = d;
-            //явное преобазование
+            //явное преобазование||byte>short>int>long>float>double
             decimal a1 = (decimal)a;
             Int64 a2 = (Int64)a1;
             Int32 a3 = (Int32)a2;
@@ -63,7 +63,7 @@ namespace lab1
             //строковые литералы
             string patch;
             patch = "C:\\users";
-            patch = @"c:\users";
+            patch = @"c:\users";//буквальный сроковый литерал
             patch = "C:/users";
 
             //создать строки на основе string
@@ -106,26 +106,7 @@ namespace lab1
             //замена элемента
             int pos;
             Console.WriteLine("введите позицию элемента который необходимо заменить");
-            pos = Console.Read();
-
-            switch (pos)
-            {
-                case 48:
-                    pos = 0;
-                    break;
-
-                case 49:
-                    pos = 1;
-                    break;
-
-                case 50:
-                    pos = 2;
-                    break;
-
-                default:
-                    pos = 5;
-                    break;
-            }
+            pos = Convert.ToInt32( Console.ReadLine());
 
             Console.Write("введите элемент\n");//-------------------------------------------------
             string change_elem;
@@ -137,6 +118,8 @@ namespace lab1
             {
                 s_arr[pos] = change_elem;
             }
+            Console.WriteLine("полученный массив:");
+            for(int i=0; i < 3; i++) { Console.WriteLine(s_arr[i]); }
 
             //создать ступенчатый массив
             int[][] stepped_arr = new int[3][];
@@ -145,7 +128,7 @@ namespace lab1
             stepped_arr[2] = new int[4];
 
             int number;
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 9; i++)//заполнение ступенчатого массива66
             {
                 Console.WriteLine("введите число");
                 number = Convert.ToInt32(Console.ReadLine());
@@ -170,19 +153,44 @@ namespace lab1
 
 
             //кортежи
-            (int number, string smstring, char smchar, string anotherstring, ulong ylong) kort = (1, "asd", 'c', "str", 123);
-            Console.WriteLine("весь кортеж", kort);
+            Console.WriteLine("вывод кортежей целиком и выборочно");
+            (int number, string smstring, char smchar, string anotherstring, ulong ylong) kort = (1, "asd", 'c', "str", 123);//іменование
+            Console.WriteLine(kort);
             Console.WriteLine(kort.number + " " + kort.smchar + " " + kort.ylong);
-            //распаковка в переменные
-            int num_from_kort = kort.Item1;
-            string smstr_from_kort = kort.Item2;
-            char smch_from_kort = kort.Item3;
-            string anotherstr_from_kort = kort.Item4;
-            ulong ul_from_kort = kort.Item5;
-            //сравнение двух кортежей
-            (int number2, string smstring2, char smchar2, string anotherstring2, ulong ylong2) kort2 = (1, "asd", 'c', "str", 123);
-            
 
+            //распаковка в переменные
+            var (one, two, three, four, five) = kort;
+
+            //сравнение двух кортежей
+            Console.WriteLine("сравнение кортежей");
+            (int number2, string smstring2, char smchar2, string anotherstring2, ulong ylong2) kort2 = (1, "asd", 'в', "str", 123);
+            Console.WriteLine(kort.Equals(kort2));
+
+            Console.WriteLine("локальная функция:  ");
+            //локальная функция
+            (int, int, int, string) locfun(int[,] array, string str23)
+            {
+                int min = Int32.MaxValue;
+                int max = Int32.MinValue;
+                int sum = 0;
+                foreach (int i in arr)
+                {
+                    sum += i;//нахождение суммы
+                    if (i < min)//нахождение минимального элемента
+                    {
+                        min = i;
+                    }
+                }
+                foreach (int i in arr)
+                {
+                    if (i > max)//нахождение максимального элемента
+                    {
+                        max = i;
+                    }
+                }
+                return (min, max, sum, str3.Substring(0, 1));
+            }
+            Console.WriteLine($"{locfun(arr, str1)}");
         }
     }
 }
