@@ -104,21 +104,28 @@ namespace lab1
             Console.WriteLine("Length: " + s_arr.Length);//длина массива
 
             //замена элемента
-            int pos;
             Console.WriteLine("введите позицию элемента который необходимо заменить");
-            pos = Convert.ToInt32( Console.ReadLine());
-
-            Console.Write("введите элемент\n");//-------------------------------------------------
-            string change_elem;
-            change_elem = Convert.ToString(Console.ReadLine());
-
-            if (pos > 2)
-                Console.WriteLine("массив содержит всего 3 элемента");
-            else
+            try
             {
-                s_arr[pos] = change_elem;
+                int pos;
+                pos = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("введите элемент\n");//-------------------------------------------------
+                string change_elem;
+                change_elem = Convert.ToString(Console.ReadLine());
+
+                if (pos > 2)
+                    Console.WriteLine("массив содержит всего 3 элемента");
+                else
+                {
+                    s_arr[pos] = change_elem;
+                }
             }
-            Console.WriteLine("полученный массив:");
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка ввода" /*+ ex*/);
+            }
+    Console.WriteLine("полученный массив:");
             for(int i=0; i < 3; i++) { Console.WriteLine(s_arr[i]); }
 
             //создать ступенчатый массив
