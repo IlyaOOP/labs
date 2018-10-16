@@ -8,7 +8,7 @@ namespace lab1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args)//статический метод Main
         {
             sbyte num1 = 1;//хранит целое число от -128 до 127 и занимает 1 байт.
             short num2 = 2;//хранит целое число от -32768 до 32767 и занимает 2 байта.
@@ -45,7 +45,6 @@ namespace lab1
             int var = 3;
             object obj_var = var;//упаковка
             int get_var = (int)obj_var;//распаковка
-
 
             //неявно типизированная переменная
             //var num = NULL;
@@ -93,11 +92,13 @@ namespace lab1
 
 
             //массивы
+            Console.WriteLine("двумерный массив:");
             int[,] arr = { {1, 2, 3}, {1, 2, 3} };
             for (int i = 0; i < 2; i++) { for (int j = 0; j < 3; j++) { if (i == 1&&flag == true) { Console.WriteLine(""); flag = false; };
                     Console.Write(arr[i, j]); } }
             Console.WriteLine("");
             //создать одномерный массив строк
+            Console.WriteLine("массив строк:");
             string[] s_arr = {"qwe", "rty", "uio"};
             for (int i = 0; i < 3; i++) { Console.WriteLine(s_arr[i]); }
 
