@@ -11,6 +11,7 @@ namespace lab4
         public int kolElems = 1;
         public string[] set;
         public int[] setInt;
+        bool isnum = false;
 
         public Set(string zero, int size)//конструктор пустого множества
         {
@@ -23,7 +24,8 @@ namespace lab4
             int stlen;
             int errNum = 0;
 
-            link1:
+        link1:
+            errNum = 0;
             Console.WriteLine("Введите множество: {1, 2, 3}");
             inputSet = Console.ReadLine();
             stlen = inputSet.Length;
@@ -88,9 +90,81 @@ namespace lab4
                 }
             }
             this.convert();
+            this.destroyCollision();
         }
 
-        public void convert()
+        public class Owner
+        {
+            public int Id;
+            public string Name;
+            public string organisation;
+            public Owner(int Id, string Name, string organisation)
+            {
+                this.Id = Id;
+                this.Name = Name;
+                this.organisation = organisation;
+            }
+        }
+        public Owner owner = new Owner(1, "Ilya", "BSTU");
+
+        public class Date
+        {
+            int day;
+            int month;
+            int year;
+            public Date(int day, int month, int year)
+            {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            public override string ToString()
+            {
+                return $"{this.day}.{this.month}.{this.year}";
+            }
+        }
+        public Date date = new Date(31, 10, 18);
+
+        public static class MathObject
+        {
+            public static int findmax(Set s)
+            {
+                int max = 0;
+                if (s.isnum != true) { Console.WriteLine("данное множество не является множеством чисел"); return 0; }
+                else
+                {
+                    for(int i=0; i<s.kolElems; i++)
+                    {
+                        if (s.setInt[i] > max) { max = s.setInt[i]; }
+                    }
+                }
+                return max;
+            }
+
+            public static int findmin(Set s)
+            {
+                int min = 0;
+                if (s.isnum != true) { Console.WriteLine("данное множество не является множеством чисел"); return 0; }
+                else
+                {
+                    min = s.setInt[0];
+                    for (int i = 0; i < s.kolElems; i++)
+                    {
+                        if (s.setInt[i] < min) { min = s.setInt[i]; }
+                    }
+                }
+                return min;
+            }
+
+            public static int amount(Set s)
+            {
+                int am = 0;
+                am = s.set.Length;
+                return am;
+            }
+        }
+
+            public void convert()
         {
             //конвертация множества в int
             setInt = new int[kolElems];
@@ -100,17 +174,46 @@ namespace lab4
                 result = int.TryParse(set[i], out setInt[i]);
                 if (result == false) { break; }
             }
-            if(result == true) { Console.WriteLine("множество чисел");}
+            if(result == true) { Console.WriteLine("множество чисел"); isnum = true; }
             else { Console.WriteLine("множество строк");}
         }
 
         public void printSet()
         {
+            Console.WriteLine("________________________________________________");
             for(int i = 0; i<kolElems; i++)
             {
                 Console.WriteLine(set[i]);
             }
             Console.WriteLine("________________________________________________");
+        }
+
+        public void destroyCollision()
+        {
+            for(int i = 0; i < this.kolElems; i++)
+            {
+                for(int j=0; j < this.kolElems; j++)
+                {
+                    if (this.set[i] == this.set[j]&&i!=j)
+                    {
+                        bool flag = false;
+                        int kol = this.kolElems;
+                        for (int k = 0; k < kol-1; k++)
+                        {
+                            if (k == j)
+                            {
+                                flag = true;
+                            }
+                            if (flag == true)
+                            {
+                                this.set[k] = this.set[k + 1];
+                            }
+                        }
+                        Array.Resize(ref this.set, kol);
+                        this.kolElems--;
+                    }
+                }
+            }
         }
 
         //перегрузка
@@ -131,7 +234,7 @@ namespace lab4
                     set1.set[i] = set1.set[i + 1];
                 }
             }
-            Array.Resize(ref set1.set, kol);
+            Array.Resize(ref set1.set, kol-1);
             set1.kolElems--;
             return set1;
         }
@@ -170,18 +273,150 @@ namespace lab4
 
             return set0;
         }
+
+        public static Set operator <(Set set1, Set set2)
+        {
+            string type1 = set1.set.GetType().ToString();
+            string type2 = set2.set.GetType().ToString();
+            string setnotequal = "множества не равны";
+            string setequal = "множества равны";
+            int size1 = set1.kolElems;
+            int size2 = set2.kolElems;
+            int kolisions=0;
+            bool notequal=false, equal = false;
+
+            if (size1 != size2) { notequal = true; }
+            else { equal = true; }
+
+            if(equal)
+            {
+                for(int i =0; i<size2; i++)
+                {
+                    for(int j = 0; j<size1; j++)
+                    {
+                        if(set1.set[i] == set2.set[j])
+                        {
+                            kolisions++;
+                        }
+                    }
+                }
+                if (kolisions == size2)
+                {
+                    Console.WriteLine(setequal);
+                }
+                else if(kolisions != size2)
+                {
+                    Console.WriteLine(setnotequal);
+                }
+            }
+            else if (!equal)
+            {
+                Console.WriteLine(setnotequal);
+                
+            }
+            return set1;
+        }
+
+        public static Set operator >(Set set1, Set set2)
+        {
+            string type1 = set1.set.GetType().ToString();
+            string type2 = set2.set.GetType().ToString();
+            string subsetAB = "множество В является подмножеством А";
+            string subsetBA = "множество А является подмножеством В";
+            int size1 = set1.kolElems;
+            int size2 = set2.kolElems;
+            int kolisions = 0;
+            bool firstmain = false, secmain = false, equal = false;
+
+            if (size1 > size2) { firstmain = true; }
+            else if (size2 > size1) { secmain = true; }
+            else { equal = true; }
+
+            if (equal) { Console.WriteLine("Равное количество элементов в множествах. Для проверки на равность множест используйте оператор '<'"); }
+            else if (firstmain)
+            {
+                for (int i = 0; i < size2; i++)
+                {
+                    for (int j = 0; j < size1; j++)
+                    {
+                        if (set1.set[j] == set2.set[i])
+                        {
+                            kolisions++;
+                        }
+                    }
+                }
+                if (kolisions == size2)
+                {
+                    Console.WriteLine(subsetAB);
+                    return set2;
+                }
+            }
+            else if (secmain)
+            {
+                for (int i = 0; i < size1; i++)
+                {
+                    for (int j = 0; j < size2; j++)
+                    {
+                        if (set1.set[i] == set2.set[j])
+                        {
+                            kolisions++;
+                        }
+                    }
+                }
+                if (kolisions == size1)
+                {
+                    Console.WriteLine(subsetBA);
+                    return set1;
+                }
+            }
+            return new Set("0", 0);
+        }
+
+        public static Set operator &(Set set1, Set set2)
+        {
+            Set set0 = new Set("null", 0);
+            string type1 = set1.set.GetType().ToString();
+            string type2 = set2.set.GetType().ToString();
+            if (type1 != type2) { return set0; }
+            int size1 = set1.kolElems;
+            int size2 = set2.kolElems;
+            int fullsize;
+
+            fullsize = size1 + size2;
+            Array.Resize(ref set0.set, fullsize);
+            for(int i=0; i<fullsize; i++)
+            {
+                if (i < size1)
+                {
+                    set0.set[i] = set1.set[i];
+                }
+                else if (i >= size1)
+                {
+                    set0.set[i] = set2.set[i - size1];
+                }
+            }
+            set0.kolElems = fullsize;
+            set0.destroyCollision();
+            return set0;
+        }
     }
     class Program
     {
         static void Main(string[] args)
         {
             Set set1 = new Set();
+            Set set2 = new Set();
             set1.printSet();
-            Set set2 = set1 - 2;//удаление второго элемента
+            set2.printSet();
+            set2 = set2 - 2;//удаление второго элемента
             set2.printSet();
             Set set3 = set1 * set2;
             Console.WriteLine("пересечение: " + set3.kolElems + " элемента");
             set3.printSet();
+            Set set4 = set1 < set2;//проверка на равность
+            Set set5 = set1 > set2;//проверка на подмножество
+            Set set6 = set1 & set2;//объединение множеств
+            set6.printSet();
         }
     }
 }
