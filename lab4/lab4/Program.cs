@@ -11,7 +11,7 @@ namespace lab4
         public int kolElems = 1;
         public string[] set;
         public int[] setInt;
-        bool isnum = false;
+        public bool isnum = false;
 
         public Set(string zero, int size)//конструктор пустого множества
         {
@@ -29,6 +29,7 @@ namespace lab4
             Console.WriteLine("Введите множество: {1, 2, 3}");
             inputSet = Console.ReadLine();
             stlen = inputSet.Length;
+            if(stlen == 0) { goto link1; }
 
             //проверка на корректность введенных данных-----------------------
             if (inputSet[0] == '{' && inputSet[stlen-1] == '}')
@@ -57,7 +58,10 @@ namespace lab4
                 link2:
                 Console.WriteLine("множество состоит из одного элемента? 1-да 2-нет");
                 int answ;
-                answ = Convert.ToInt32(Console.ReadLine());
+                string answer;
+                answer = Console.ReadLine();
+                if (answer.Length == 0) { goto link1; }
+                answ = Convert.ToInt32(answer);
                 if (answ > 0 && answ < 3)
                 {
                     if (answ == 1) { }
@@ -80,6 +84,7 @@ namespace lab4
             {
                 if (inputSet[i] == ','||inputSet[i]=='}')
                 {
+                    if (setElem == "") { setElem = " "; }
                     set[j] = setElem;
                     setElem = "";
                     j++;
@@ -88,6 +93,7 @@ namespace lab4
                 {
                     setElem += inputSet[i];
                 }
+                
             }
             this.convert();
             this.destroyCollision();
@@ -124,45 +130,6 @@ namespace lab4
             }
         }
         public Date date = new Date(31, 10, 18);
-
-        public static class MathObject
-        {
-            public static int findmax(Set s)
-            {
-                int max = 0;
-                if (s.isnum != true) { Console.WriteLine("данное множество не является множеством чисел"); return 0; }
-                else
-                {
-                    for(int i=0; i<s.kolElems; i++)
-                    {
-                        if (s.setInt[i] > max) { max = s.setInt[i]; }
-                    }
-                }
-                return max;
-            }
-
-            public static int findmin(Set s)
-            {
-                int min = 0;
-                if (s.isnum != true) { Console.WriteLine("данное множество не является множеством чисел"); return 0; }
-                else
-                {
-                    min = s.setInt[0];
-                    for (int i = 0; i < s.kolElems; i++)
-                    {
-                        if (s.setInt[i] < min) { min = s.setInt[i]; }
-                    }
-                }
-                return min;
-            }
-
-            public static int amount(Set s)
-            {
-                int am = 0;
-                am = s.set.Length;
-                return am;
-            }
-        }
 
             public void convert()
         {
@@ -400,6 +367,65 @@ namespace lab4
             return set0;
         }
     }
+
+    static class MathObject
+    {
+        public static int Findmax(Set s)
+        {
+            int max = 0;
+            if (s.isnum != true) { Console.WriteLine("данное множество не является множеством чисел"); return 0; }
+            else
+            {
+                for (int i = 0; i < s.kolElems; i++)
+                {
+                    if (s.setInt[i] > max) { max = s.setInt[i]; }
+                }
+            }
+            return max;
+        }
+
+        public static int Findmin(Set s)
+        {
+            int min = 0;
+            if (s.isnum != true) { Console.WriteLine("данное множество не является множеством чисел"); return 0; }
+            else
+            {
+                min = s.setInt[0];
+                for (int i = 0; i < s.kolElems; i++)
+                {
+                    if (s.setInt[i] < min) { min = s.setInt[i]; }
+                }
+            }
+            return min;
+        }
+
+        public static int amount(Set s)
+        {
+            int am = 0;
+            am = s.set.Length;
+            return am;
+        }
+
+        public static string addot(this string str)
+        {
+            str += ".";
+            return str;
+        }
+
+        public static int destroyNULL(this Set set)
+        {
+            int kolelems = set.kolElems;
+            for (int i = 0; i < kolelems; i++)
+            {
+                if (set.set[i] == ""||set.set[i]==" ")
+                {
+                    set = set - (i+1);
+                    kolelems--;
+                }
+            }
+            return 0;
+        }
+    }
     class Program
     {
         static void Main(string[] args)
@@ -417,6 +443,11 @@ namespace lab4
             Set set5 = set1 > set2;//проверка на подмножество
             Set set6 = set1 & set2;//объединение множеств
             set6.printSet();
+            Console.WriteLine(MathObject.addot("string"));
+            Set set7 = new Set();
+            set7.printSet();
+            MathObject.destroyNULL(set7);
+            set7.printSet();
         }
     }
 }

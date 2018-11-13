@@ -12,3 +12,10 @@ C:\Users\илья\Desktop\ \OOP\labs\lab2\lab3\lab3\obj\Debug\lab3.csprojAssemb
 C:\Users\илья\Desktop\ \OOP\labs\lab2\lab3\lab3\obj\Debug\lab3.csproj.CoreCompileInputs.cache
 C:\Users\илья\Desktop\ \OOP\labs\lab2\lab3\lab3\obj\Debug\lab3.exe
 C:\Users\илья\Desktop\ \OOP\labs\lab2\lab3\lab3\obj\Debug\lab3.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab3\lab3\bin\Debug\lab3.exe.config
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab3\lab3\bin\Debug\lab3.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab3\lab3\bin\Debug\lab3.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab3\lab3\obj\Debug\lab3.csprojAssemblyReference.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab3\lab3\obj\Debug\lab3.csproj.CoreCompileInputs.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab3\lab3\obj\Debug\lab3.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab3\lab3\obj\Debug\lab3.pdb

@@ -174,6 +174,7 @@ namespace lab3
             Data.type = f;
 
             Data now = new Data();//объект1
+            now.print();
 
             Data sec = new Data(31, 45, 2019);//объект2
             sec.accs_month = 5;//свойство
