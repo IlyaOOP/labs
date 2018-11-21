@@ -1,0 +1,7 @@
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\smst\smst\bin\Debug\smst.exe.config
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\smst\smst\bin\Debug\smst.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\smst\smst\bin\Debug\smst.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\smst\smst\obj\Debug\smst.csprojAssemblyReference.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\smst\smst\obj\Debug\smst.csproj.CoreCompileInputs.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\smst\smst\obj\Debug\smst.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\smst\smst\obj\Debug\smst.pdb

@@ -8,12 +8,14 @@ namespace Растение
 {
     interface IProperties
     {
+        bool plant_living();
         double prevalence { get; set; }
         double condition { get; set; }
     }
 
-    abstract class растение : IProperties
+    abstract class растение : IProperties//не сможем создать объект
     {
+        public abstract bool plant_living();
         public string grown_in;
         public abstract double prevalence { get; set; }
         public abstract double condition { get; set; }
@@ -23,8 +25,19 @@ namespace Растение
         }
     }
 
-    class куст : растение
+    class куст : растение, IProperties
     {
+        bool IProperties.plant_living()
+        {
+            if (this != null)
+                return false;
+            else
+                return true;
+        }
+        public override bool plant_living()
+        {
+            throw new NotImplementedException(); // метод не реализован, но будет реализован в будущем
+        }
         public int length;
         public override double prevalence { get; set; }
         public override double condition { get; set; }
@@ -36,12 +49,31 @@ namespace Растение
         }
         public override string ToString()
         {
-            return (this.GetType() + " произрастает в: " + grown_in + " высота: " + length + " распространенность: " + prevalence);
+            return (this.GetType() + " произрастает в: " + grown_in + "\nвысота: " + length + "\nраспространенность: " + prevalence);
+        }
+        public void print()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(this.GetType() + " произрастает в: " + grown_in);
+            Console.ResetColor();
+            Console.WriteLine("высота: " + length + "\nраспространенность: " + prevalence);
+            Console.ResetColor();
         }
     }
 
-    class бумага : растение
+    class бумага : растение, IProperties
     {
+        bool IProperties.plant_living()
+        {
+            if (this != null)
+                return false;
+            else
+                return true;
+        }
+        public override bool plant_living()
+        {
+            throw new NotImplementedException(); // метод не реализован, но будет реализован в будущем
+        }
         int height;
         int width;
         public override double prevalence { get; set; }
@@ -55,12 +87,31 @@ namespace Растение
         }
         public override string ToString()
         {
-            return (this.GetType() + " произведено в: " + grown_in + " длина: " + height + " ширина: " + width + " распространенность: " + prevalence);
+            return (this.GetType() + " произведено в: " + grown_in + "\nдлина: " + height + "\nширина: " + width + "\nраспространенность: " + prevalence);
+        }
+        public void print()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(this.GetType() + " произрастает в: " + grown_in);
+            Console.ResetColor();
+            Console.WriteLine("длина: " + height + "\nширина: " + width + "\nраспространенность: " + prevalence);
+            Console.ResetColor();
         }
     }
 
-    class цветок : растение
+    class цветок : растение, IProperties
     {
+        bool IProperties.plant_living()
+        {
+            if (this != null)
+                return false;
+            else
+                return true;
+        }
+        public override bool plant_living()
+        {
+            throw new NotImplementedException(); // метод не реализован, но будет реализован в будущем
+        }
         public int length;
         public override double prevalence { get; set; }
         public override double condition { get; set; }
@@ -72,12 +123,125 @@ namespace Растение
         }
         public override string ToString()
         {
-            return (this.GetType() + " произрастает в: " + grown_in + " высота: " + length + " распространенность: " + prevalence);
+            return (this.GetType() + " произрастает в: " + grown_in + "\nвысота: " + length + "\nраспространенность: " + prevalence);
+        }
+        public virtual void print()//будет  переопределено в букет
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(this.GetType() + " произрастает в: " + grown_in);
+            Console.ResetColor();
+            Console.WriteLine("высота: " + length + "\nраспространенность: " + prevalence);
+            Console.ResetColor();
         }
     }
 
     class роза : цветок
     {
+        public string color;
+        public роза(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown)
+        {
+            color = clr;
+            length = len;
+            prevalence = preval;
+            condition = cond;
+        }
+        public override string ToString()
+        {
+            return (this.GetType() + " произрастает в: " + grown_in + "\nвысота: " + length + "\nраспространенность: " + prevalence + "\nцвет: " + color);
+        }
+        
+    }
+
+    class гладиолус : цветок
+    {
+        public string color;
+        public гладиолус(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown)
+        {
+            color = clr;
+            length = len;
+            prevalence = preval;
+            condition = cond;
+        }
+        public override string ToString()
+        {
+            return (this.GetType() + " произрастает в: " + grown_in + "\nвысота: " + length + "\nраспространенность: " + prevalence + "\nцвет: " + color);
+        }
+    }
+
+    class кактус : цветок
+    {
+        public string color;
+        public кактус(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown)
+        {
+            color = clr;
+            length = len;
+            prevalence = preval;
+            condition = cond;
+        }
+        public override string ToString()
+        {
+            return (this.GetType() + " произрастает в: " + grown_in + "\nвысота: " + length + "\nраспространенность: " + prevalence + "\nцвет: " + color);
+        }
+    }
+
+    class букет : цветок
+    {
+        object[] contain;
+        string objarr = "";
+        public букет(int kolich, double preval, double cond, string grown, object[] obj) : base(kolich, preval, cond, grown)
+        {
+            contain = obj;
+            length = kolich;
+            prevalence = preval;
+            condition = cond;
+            
+            foreach (object i in contain)
+            {
+                objarr += "-\n";
+                objarr += Convert.ToString(i);
+                objarr += ";\n";
+            }
+        }
+        public override string ToString()
+        {
+            return (this.GetType() + " произрастает в: " + grown_in + "\nколичество: " + length + "\nраспространенность: " + prevalence + "\nсостав: \n" + objarr);
+        }
+
+        public override void print()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(this.GetType() + " произрастает в: " + grown_in);
+            Console.ResetColor();
+            Console.WriteLine("количесво: " + length + "\nраспространенность: " + prevalence + "\nсостав: \n" + objarr);
+            Console.ResetColor();
+        }
+    }
+    public class pereopr : Object
+    {
+        public override string ToString()
+        {
+            return "a";
+        }
+
+        public override int GetHashCode()
+        {
+            return 2;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj != null) return true;
+            else return false;
+        }
+    }
+
+    sealed class Printer//бесплодный класс
+    {
+        public string iAmPrinting(растение someobj)
+        {
+            Type a = someobj.GetType();
+            return a.ToString();
+        }
 
     }
 
@@ -86,13 +250,45 @@ namespace Растение
         static void Main(string[] args)
         {
             куст kyst = new куст(100, 0.1, 1, "belarus");
-            Console.WriteLine(kyst.ToString());
+            kyst.print();
 
             бумага paper = new бумага(100, 90, 1, 0, "belarus");
-            Console.WriteLine(paper.ToString());
+            paper.print();
 
             цветок flower = new цветок(15, 0.9, 0.5, "belarus");
-            Console.WriteLine(flower.ToString());
+            flower.print();
+
+            роза rose = new роза(40, 0.7, 0.5, "England", "white");
+            rose.print();
+
+            object[] objarr = { flower, rose };
+            букет bouquet = new букет(15, 0.5, 1, "belarus", objarr);
+            bouquet.print();
+
+            Console.Write("Rose is string ");
+            Console.WriteLine(rose is string);
+            Console.Write("Rose is цветок ");
+            Console.WriteLine(rose is цветок);
+            Console.Write("Rose as растение ");
+            Console.WriteLine(rose as растение);
+            Console.WriteLine("");
+            IProperties obj;
+            obj = rose;
+            Console.WriteLine("object rose: " + obj.ToString());
+            Console.WriteLine("");
+
+            Printer pr = new Printer();
+            List<Object> spisok = new List<Object>();
+            spisok.Add(kyst);
+            spisok.Add(paper);
+            spisok.Add(flower);
+            spisok.Add(rose);
+            spisok.Add(bouquet);
+            Console.WriteLine(pr.iAmPrinting(kyst));
+            Console.WriteLine(pr.iAmPrinting(paper));
+            Console.WriteLine(pr.iAmPrinting(flower));
+            Console.WriteLine(pr.iAmPrinting(rose));
+            Console.WriteLine(pr.iAmPrinting(bouquet));
         }
     }
 }
