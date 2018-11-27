@@ -1,0 +1,7 @@
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab6\lab6\bin\Debug\lab6.exe.config
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab6\lab6\bin\Debug\lab6.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab6\lab6\bin\Debug\lab6.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab6\lab6\obj\Debug\lab6.csprojAssemblyReference.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab6\lab6\obj\Debug\lab6.csproj.CoreCompileInputs.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab6\lab6\obj\Debug\lab6.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab6\lab6\obj\Debug\lab6.pdb

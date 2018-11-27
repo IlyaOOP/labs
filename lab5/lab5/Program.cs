@@ -27,7 +27,7 @@ namespace Растение
 
     class куст : растение, IProperties
     {
-        bool IProperties.plant_living()
+        bool IProperties.plant_living()//реализация метода интерфейса
         {
             if (this != null)
                 return false;
@@ -237,7 +237,7 @@ namespace Растение
 
     sealed class Printer//бесплодный класс
     {
-        public string iAmPrinting(растение someobj)
+        public string iAmPrinting(растение someobj)//полиморфный метод с параметром-ссылкой на объект
         {
             Type a = someobj.GetType();
             return a.ToString();
@@ -278,17 +278,17 @@ namespace Растение
             Console.WriteLine("");
 
             Printer pr = new Printer();
-            List<Object> spisok = new List<Object>();
+            List<растение> spisok = new List<растение>();
             spisok.Add(kyst);
             spisok.Add(paper);
             spisok.Add(flower);
             spisok.Add(rose);
             spisok.Add(bouquet);
-            Console.WriteLine(pr.iAmPrinting(kyst));
-            Console.WriteLine(pr.iAmPrinting(paper));
-            Console.WriteLine(pr.iAmPrinting(flower));
-            Console.WriteLine(pr.iAmPrinting(rose));
-            Console.WriteLine(pr.iAmPrinting(bouquet));
+            Console.WriteLine(pr.iAmPrinting(spisok[0]));
+            Console.WriteLine(pr.iAmPrinting(spisok[1]));
+            Console.WriteLine(pr.iAmPrinting(spisok[2]));
+            Console.WriteLine(pr.iAmPrinting(spisok[3]));
+            Console.WriteLine(pr.iAmPrinting(spisok[4]));
         }
     }
 }

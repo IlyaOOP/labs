@@ -141,8 +141,8 @@ namespace lab4
                 result = int.TryParse(set[i], out setInt[i]);
                 if (result == false) { break; }
             }
-            if(result == true) { Console.WriteLine("множество чисел"); isnum = true; }
-            else { Console.WriteLine("множество строк");}
+            if(result == true) { Console.WriteLine(" "); isnum = true; }
+            else { Console.WriteLine("");}
         }
 
         public void printSet()
@@ -406,7 +406,7 @@ namespace lab4
             return am;
         }
 
-        public static string addot(this string str)
+        public static string addot(this string str)//метод расширения для string
         {
             str += ".";
             return str;
