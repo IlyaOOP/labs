@@ -1,0 +1,5 @@
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab5XAMARIN\lab5XAMARIN\bin\Debug\lab5XAMARIN.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab5XAMARIN\lab5XAMARIN\bin\Debug\lab5XAMARIN.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab5XAMARIN\lab5XAMARIN\obj\x86\Debug\lab5XAMARIN.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab5XAMARIN\lab5XAMARIN\obj\x86\Debug\lab5XAMARIN.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab5XAMARIN\lab5XAMARIN\obj\x86\Debug\lab5XAMARIN.csprojResolveAssemblyReference.cache

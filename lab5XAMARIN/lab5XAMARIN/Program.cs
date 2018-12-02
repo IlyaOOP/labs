@@ -23,12 +23,24 @@ namespace Растение
 		{
 			grown_in = a;
 		}
+
 	}
 
-	partial class куст : растение
+	class куст : растение, IProperties
 	{
+		bool IProperties.plant_living()//реализация метода интерфейса
+		{
+			if (this != null)
+				return false;
+			else
+				return true;
+		}
+		public override bool plant_living()
+		{
+			throw new NotImplementedException(); // метод не реализован, но будет реализован в будущем
+		}
 		public int length;
-		public override double prevalence { get; set; }
+        public override double prevalence { get; set; }
 		public override double condition { get; set; }
 		public куст(int len, double preval, double cond, string grown) : base(grown)
 		{
@@ -52,27 +64,6 @@ namespace Растение
 
 	class бумага : растение, IProperties
 	{
-		public enum qality {Bad, Good};//----------------
-
-		struct factory
-		{
-			public string name;
-			public int age;
-
-			public void DisplayInfo()
-			{
-				Console.WriteLine("Name: " + name + " Age: " + age);
-			}
-		}
-			
-		public void SetFactory(string a, int b)
-		{
-			бумага.factory f = new factory ();
-			f.name = a;
-			f.age = b;
-			f.DisplayInfo ();
-		}
-
 		bool IProperties.plant_living()
 		{
 			if (this != null)
@@ -97,7 +88,7 @@ namespace Растение
 		}
 		public override string ToString()
 		{
-			return (this.GetType() + " произведено в: " + grown_in + "\nдлина: " + height + "\nширина: " + width + "\nраспространенность: " + prevalence + "качаство: " + (qality)1);
+			return (this.GetType() + " произведено в: " + grown_in + "\nдлина: " + height + "\nширина: " + width + "\nраспространенность: " + prevalence);
 		}
 		public void print()
 		{
@@ -105,14 +96,12 @@ namespace Растение
 			Console.WriteLine(this.GetType() + " произрастает в: " + grown_in);
 			Console.ResetColor();
 			Console.WriteLine("длина: " + height + "\nширина: " + width + "\nраспространенность: " + prevalence);
-			Console.WriteLine ("качаство: " + (qality)1);
 			Console.ResetColor();
 		}
 	}
 
 	class цветок : растение, IProperties
 	{
-		public string color;
 		bool IProperties.plant_living()
 		{
 			if (this != null)
@@ -127,10 +116,8 @@ namespace Растение
 		public int length;
 		public override double prevalence { get; set; }
 		public override double condition { get; set; }
-
-		public цветок(int len, double preval, double cond, string grown, string col) : base(grown)
+		public цветок(int len, double preval, double cond, string grown) : base(grown)
 		{
-			color = col;
 			length = len;
 			prevalence = preval;
 			condition = cond;
@@ -139,7 +126,7 @@ namespace Растение
 		{
 			return (this.GetType() + " произрастает в: " + grown_in + "\nвысота: " + length + "\nраспространенность: " + prevalence);
 		}
-		public virtual void print()//будет  переопределено в букет
+/**/	public virtual void print()//будет  переопределено в букет
 		{
 			Console.ForegroundColor = ConsoleColor.Red;
 			Console.WriteLine(this.GetType() + " произрастает в: " + grown_in);
@@ -152,7 +139,7 @@ namespace Растение
 	class роза : цветок
 	{
 		public string color;
-		public роза(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown, clr)
+		public роза(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown)
 		{
 			color = clr;
 			length = len;
@@ -169,7 +156,7 @@ namespace Растение
 	class гладиолус : цветок
 	{
 		public string color;
-		public гладиолус(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown, clr)
+		public гладиолус(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown)
 		{
 			color = clr;
 			length = len;
@@ -185,7 +172,7 @@ namespace Растение
 	class кактус : цветок
 	{
 		public string color;
-		public кактус(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown, clr)
+		public кактус(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown)
 		{
 			color = clr;
 			length = len;
@@ -198,7 +185,7 @@ namespace Растение
 		}
 	}
 
-    /*class букет : цветок
+	class букет : цветок
 	{
 		object[] contain;
 		string objarr = "";
@@ -229,7 +216,7 @@ namespace Растение
 			Console.WriteLine("количесво: " + length + "\nраспространенность: " + prevalence + "\nсостав: \n" + objarr);
 			Console.ResetColor();
 		}
-	}*/
+	}
 	public class pereopr : Object
 	{
 		public override string ToString()
@@ -261,24 +248,29 @@ namespace Растение
 
 	class Program
 	{
+		static void fun(IProperties prop)
+		{
+			prop.plant_living ();
+		}
 		static void Main(string[] args)
 		{
 			куст kyst = new куст(100, 0.1, 1, "belarus");
 			kyst.print();
+			//kyst.plant_living ();
+			fun (kyst);
 
 			бумага paper = new бумага(100, 90, 1, 0, "belarus");
 			paper.print();
 
-
-			цветок flower = new цветок(15, 0.9, 0.7, "belarus", "gold");
+			цветок flower = new цветок(15, 0.9, 0.5, "belarus");
 			flower.print();
 
-			кактус cactus = new кактус (10, 0.3, 0.4, "Egupt", "green");
-
-			роза rose = new роза(40, 0.7, 0, "England", "white");
+			роза rose = new роза(40, 0.7, 0.5, "England", "white");
 			rose.print();
 
 			object[] objarr = { flower, rose };
+			букет bouquet = new букет(15, 0.5, 1, "belarus", objarr);
+			bouquet.print();
 
 			Console.Write("Rose is string ");
 			Console.WriteLine(rose is string);
@@ -298,31 +290,12 @@ namespace Растение
 			spisok.Add(paper);
 			spisok.Add(flower);
 			spisok.Add(rose);
+			spisok.Add(bouquet);
 			Console.WriteLine(pr.iAmPrinting(spisok[0]));
 			Console.WriteLine(pr.iAmPrinting(spisok[1]));
 			Console.WriteLine(pr.iAmPrinting(spisok[2]));
 			Console.WriteLine(pr.iAmPrinting(spisok[3]));
-			Console.BackgroundColor = ConsoleColor.Red;
-			for (int i = 0; i < 20; i++) 
-			{
-				Console.Write (" ");
-			}
-			Console.WriteLine ();
-			Console.ResetColor ();
-
-			paper.SetFactory ("factory", 2);
-			Console.WriteLine ();
-
-			букет bouquet = new букет(rose, flower, cactus);
-			bouquet.PrintBouqet ();
-			Console.WriteLine ();
-
-			Controller cntr = new Controller ();
-			Console.WriteLine("price " + cntr.cost (bouquet) + " rub");
-			cntr.sort (bouquet);
-			Console.WriteLine ();
-
-			cntr.findbycolor (bouquet, "green");
+			Console.WriteLine(pr.iAmPrinting(spisok[4]));
 
 			Console.ReadKey ();
 		}

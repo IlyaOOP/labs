@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Растение
 {
@@ -64,7 +65,7 @@ namespace Растение
 				Console.WriteLine("Name: " + name + " Age: " + age);
 			}
 		}
-			
+
 		public void SetFactory(string a, int b)
 		{
 			бумага.factory f = new factory ();
@@ -187,6 +188,13 @@ namespace Растение
 		public string color;
 		public кактус(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown, clr)
 		{
+			if (clr.Length > 10) {
+				Exception x = new Exception ();
+				x.Data.Add("time ", DateTime.Now);
+			}
+			if (clr == "red") {
+				throw new cactusException ("кактус не может быть красным");
+			}
 			color = clr;
 			length = len;
 			prevalence = preval;
@@ -198,7 +206,7 @@ namespace Растение
 		}
 	}
 
-    /*class букет : цветок
+	/*class букет : цветок
 	{
 		object[] contain;
 		string objarr = "";
@@ -259,72 +267,137 @@ namespace Растение
 
 	}
 
+	//----------------------------------------------------------------------------
+
+	class cactusException : Exception
+	{
+		public cactusException(string str) : base(str) { }
+		public override string ToString()
+		{
+			Console.BackgroundColor = ConsoleColor.Red;
+			return "Ошибка: " + Message;
+		}
+	}
+	class except1 : Exception
+	{
+		public except1(string str) : base(str) { }
+		public override string ToString()
+		{
+			return Message;
+		}
+	}
+
+	class except2 : except1
+	{
+		public except2(string str) : base(str) { }
+		public override string ToString()
+		{
+			return Message;
+		}
+	}
+
 	class Program
 	{
+		static bool err=false;
+		static int dividenull(int x, int y)
+		{
+			if (y == 0)
+			{
+				Exception a = new Exception();
+				a.Data.Add("Время: ", DateTime.Now);
+				err = true;
+			};
+			return x / y;
+		}
+
 		static void Main(string[] args)
 		{
-			куст kyst = new куст(100, 0.1, 1, "belarus");
-			kyst.print();
-
-			бумага paper = new бумага(100, 90, 1, 0, "belarus");
-			paper.print();
-
-
-			цветок flower = new цветок(15, 0.9, 0.7, "belarus", "gold");
-			flower.print();
-
-			кактус cactus = new кактус (10, 0.3, 0.4, "Egupt", "green");
-
-			роза rose = new роза(40, 0.7, 0, "England", "white");
-			rose.print();
-
-			object[] objarr = { flower, rose };
-
-			Console.Write("Rose is string ");
-			Console.WriteLine(rose is string);
-			Console.Write("Rose is цветок ");
-			Console.WriteLine(rose is цветок);
-			Console.Write("Rose as растение ");
-			Console.WriteLine(rose as растение);
-			Console.WriteLine("");
-			IProperties obj;
-			obj = rose;
-			Console.WriteLine("object rose: " + obj.ToString());
-			Console.WriteLine("");
-
-			Printer pr = new Printer();
-			List<растение> spisok = new List<растение>();
-			spisok.Add(kyst);
-			spisok.Add(paper);
-			spisok.Add(flower);
-			spisok.Add(rose);
-			Console.WriteLine(pr.iAmPrinting(spisok[0]));
-			Console.WriteLine(pr.iAmPrinting(spisok[1]));
-			Console.WriteLine(pr.iAmPrinting(spisok[2]));
-			Console.WriteLine(pr.iAmPrinting(spisok[3]));
-			Console.BackgroundColor = ConsoleColor.Red;
-			for (int i = 0; i < 20; i++) 
+			try
 			{
-				Console.Write (" ");
+				куст kyst = new куст(100, 0.1, 1, "belarus");
+				kyst.print();
+
+				бумага paper = new бумага(100, 90, 1, 0, "belarus");
+				paper.print();
+
+
+				цветок flower = new цветок(15, 0.9, 0.7, "belarus", "gold");
+				flower.print();
+
+				кактус cactus = new кактус (10, 0.3, 0.4, "Egupt", "green");
+
+				роза rose = new роза(40, 0.7, 0, "England", "white");
+				rose.print();
+
+				object[] objarr = { flower, rose };
+
+				Console.Write("Rose is string ");
+				Console.WriteLine(rose is string);
+				Console.Write("Rose is цветок ");
+				Console.WriteLine(rose is цветок);
+				Console.Write("Rose as растение ");
+				Console.WriteLine(rose as растение);
+				Console.WriteLine("");
+				IProperties obj;
+				obj = rose;
+				Console.WriteLine("object rose: " + obj.ToString());
+				Console.WriteLine("");
+
+				Printer pr = new Printer();
+				List<растение> spisok = new List<растение>();
+				spisok.Add(kyst);
+				spisok.Add(paper);
+				spisok.Add(flower);
+				spisok.Add(rose);
+				Console.WriteLine(pr.iAmPrinting(spisok[0]));
+				Console.WriteLine(pr.iAmPrinting(spisok[1]));
+				Console.WriteLine(pr.iAmPrinting(spisok[2]));
+				Console.WriteLine(pr.iAmPrinting(spisok[3]));
+				Console.BackgroundColor = ConsoleColor.Red;
+				for (int i = 0; i < 20; i++) 
+				{
+					Console.Write (" ");
+				}
+				Console.WriteLine ();
+				Console.ResetColor ();
+
+				paper.SetFactory ("factory", 2);
+				Console.WriteLine ();
+
+				букет bouquet = new букет(rose, flower, cactus);
+				bouquet.PrintBouqet ();
+				Console.WriteLine ();
+
+				Controller cntr = new Controller ();
+				Console.WriteLine("price " + cntr.cost (bouquet) + " rub");
+				cntr.sort (bouquet);
+				Console.WriteLine ();
+
+				cntr.findbycolor (bouquet, "green");
+
+
+				кактус Ecactus = new кактус(10, 0.3, 0.4, "Egupt", "red");
+				dividenull(89,0);
+
+				Console.ReadKey ();
 			}
-			Console.WriteLine ();
-			Console.ResetColor ();
-
-			paper.SetFactory ("factory", 2);
-			Console.WriteLine ();
-
-			букет bouquet = new букет(rose, flower, cactus);
-			bouquet.PrintBouqet ();
-			Console.WriteLine ();
-
-			Controller cntr = new Controller ();
-			Console.WriteLine("price " + cntr.cost (bouquet) + " rub");
-			cntr.sort (bouquet);
-			Console.WriteLine ();
-
-			cntr.findbycolor (bouquet, "green");
-
-			Console.ReadKey ();
+			catch (cactusException ex){Console.WriteLine (ex); err = true;}
+			catch (except2 ex) { Console.WriteLine(ex); err = true;}
+			catch (except1 ex) { Console.WriteLine(ex); err = true;}
+			catch (Exception ex)
+			{
+				err = true;
+				Console.WriteLine("------------------------------------------");
+				Console.WriteLine(ex.Message);
+				Console.WriteLine("------------------------------------------");
+				Console.WriteLine(ex.TargetSite);
+				Console.WriteLine("------------------------------------------");
+				Console.WriteLine(ex.StackTrace);
+				Console.WriteLine("------------------------------------------");
+				Console.WriteLine(ex.HelpLink);
+			}
+			finally {Debug.Assert(err != false,/*\\*/ "Программа завершена без ошибок"); Console.ReadKey ();}
 		}
 	}
 }
+

@@ -1,0 +1,5 @@
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab7_XAMARIN\lab7_XAMARIN\bin\Debug\lab7_XAMARIN.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab7_XAMARIN\lab7_XAMARIN\bin\Debug\lab7_XAMARIN.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab7_XAMARIN\lab7_XAMARIN\obj\x86\Debug\lab7_XAMARIN.csprojResolveAssemblyReference.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab7_XAMARIN\lab7_XAMARIN\obj\x86\Debug\lab7_XAMARIN.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab7_XAMARIN\lab7_XAMARIN\obj\x86\Debug\lab7_XAMARIN.pdb

@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{57728C1F-642D-443A-8EFE-82F052DF3A44}</ProjectGuid>
+    <ProjectGuid>{8DC2ECD8-A04D-4217-96A2-52C73621032A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>lab6_XAMARIN</RootNamespace>
-    <AssemblyName>lab6_XAMARIN</AssemblyName>
+    <RootNamespace>lab5XAMARIN</RootNamespace>
+    <AssemblyName>lab5XAMARIN</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -37,7 +37,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="part2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

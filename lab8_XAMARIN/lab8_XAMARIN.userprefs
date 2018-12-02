@@ -1,8 +1,8 @@
-﻿<Properties StartupItem="lab6_XAMARIN\lab6_XAMARIN.csproj">
+﻿<Properties StartupItem="lab8_XAMARIN\lab8_XAMARIN.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="lab6_XAMARIN\Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="lab8_XAMARIN\Program.cs">
     <Files>
-      <File FileName="lab6_XAMARIN\Program.cs" Line="323" Column="37" />
+      <File FileName="lab8_XAMARIN\Program.cs" Line="62" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
