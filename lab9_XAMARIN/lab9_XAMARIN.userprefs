@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="lab9_XAMARIN\lab9_XAMARIN.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="lab9_XAMARIN\Program.cs">
+    <Files>
+      <File FileName="lab9_XAMARIN\Program.cs" Line="112" Column="36" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,4 @@
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab9_XAMARIN\lab9_XAMARIN\bin\Debug\lab9_XAMARIN.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab9_XAMARIN\lab9_XAMARIN\bin\Debug\lab9_XAMARIN.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab9_XAMARIN\lab9_XAMARIN\obj\x86\Debug\lab9_XAMARIN.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab9_XAMARIN\lab9_XAMARIN\obj\x86\Debug\lab9_XAMARIN.pdb
