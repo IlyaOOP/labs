@@ -2,3 +2,4 @@ C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab8_XAMARIN\lab8_XAMAR
 C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab8_XAMARIN\lab8_XAMARIN\bin\Debug\lab8_XAMARIN.pdb
 C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab8_XAMARIN\lab8_XAMARIN\obj\x86\Debug\lab8_XAMARIN.exe
 C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab8_XAMARIN\lab8_XAMARIN\obj\x86\Debug\lab8_XAMARIN.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab8_XAMARIN\lab8_XAMARIN\obj\x86\Debug\lab8_XAMARIN.csprojResolveAssemblyReference.cache

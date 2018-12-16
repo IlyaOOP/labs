@@ -188,7 +188,7 @@ namespace Растение
 		public string color;
 		public кактус(int len, double preval, double cond, string grown, string clr) : base(len, preval, cond, grown, clr)
 		{
-			if (clr.Length > 10) {
+			if (clr.Length > 10) {//----------------------------------------------------------------------------------------------Exception
 				Exception x = new Exception ();
 				x.Data.Add("time ", DateTime.Now);
 			}
@@ -376,8 +376,8 @@ namespace Растение
 				cntr.findbycolor (bouquet, "green");
 
 
-				кактус Ecactus = new кактус(10, 0.3, 0.4, "Egupt", "red");
-				dividenull(89,0);
+				//кактус Ecactus = new кактус(10, 0.3, 0.4, "Egupt", "red");
+				//dividenull(89,0);
 
 				Console.ReadKey ();
 			}

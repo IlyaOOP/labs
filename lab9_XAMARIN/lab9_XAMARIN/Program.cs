@@ -28,8 +28,7 @@ namespace lab9_XAMARIN
 			}
 		}
 	}
-
-	delegate void toup();
+		
 
 	class tokar
 	{
@@ -152,7 +151,7 @@ namespace lab9_XAMARIN
 			Func<string, int, string, string> fun = oString.addsy;
 			Console.WriteLine(str = fun (str, 3, "f"));
 
-			Action<string> act = oString.noreturn;
+			Action<string> act = oString.noreturn;//нет параметра out
 			act (str);
 
 			Console.ReadKey ();
