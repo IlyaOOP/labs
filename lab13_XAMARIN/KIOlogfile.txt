@@ -1,0 +1,2 @@
+19.12.2018 1:54:25___Changed___путь: C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab13_XAMARIN\lab13_XAMARIN\obj\x86\Debug
+19.12.2018 2:10:28___Changed___путь: C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab13_XAMARIN\lab13_XAMARIN\obj\x86\Debug

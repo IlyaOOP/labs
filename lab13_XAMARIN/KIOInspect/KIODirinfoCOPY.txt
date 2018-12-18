@@ -1,0 +1,39 @@
+gtk-sharp-2.12.45.msi
+mono-5.16.0.220-x64-0.msi
+Recovery.txt
+SharpDevelop_5.1.0.5216_Setup.msi
+ViberSetup.exe
+XamarinStudio.msi
+$RECYCLE.BIN
+activ
+adrive
+Android
+Boot
+components
+Dev-Cpp
+df
+docs
+linux
+mega
+Microsoft
+MonoDevelop
+msdownld.tmp
+ollydbg
+ProgramData
+ps6
+Recovery
+small
+Sublime Text 3
+System Volume Information
+Temp
+VB
+VisST
+vs2017
+vs_inst
+Windows Kits
+WinR
+WinXP
+word
+компас 3д
+новыйПоворот
+пдд

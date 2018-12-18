@@ -1,0 +1,15 @@
+Int32 get_A()
+Void set_A(Int32)
+Void func1()
+Void func2(Int32)
+System.String ToString()
+Boolean Equals(System.Object)
+Int32 GetHashCode()
+System.Type GetType()
+Void .ctor()
+Void .ctor(Int32, System.String, System.String)
+Int32 A
+Int32 a
+System.String b
+
+_____________________________________________________________

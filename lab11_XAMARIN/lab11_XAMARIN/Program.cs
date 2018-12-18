@@ -145,7 +145,7 @@ namespace lab11_XAMARIN
 	{
 		public static void Main (string[] args)
 		{
-
+         
 			string[] month = new string[] {
 				"January",
 				"February",
