@@ -1,0 +1,4 @@
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\KR2_XAMARIN\KR2_XAMARIN\bin\Debug\KR2_XAMARIN.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\KR2_XAMARIN\KR2_XAMARIN\bin\Debug\KR2_XAMARIN.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\KR2_XAMARIN\KR2_XAMARIN\obj\x86\Debug\KR2_XAMARIN.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\KR2_XAMARIN\KR2_XAMARIN\obj\x86\Debug\KR2_XAMARIN.pdb

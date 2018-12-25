@@ -1,0 +1,30 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<SOAP-ENC:Array SOAP-ENC:arrayType="xsd:anyType[4]">
+<item href="#ref-2"/>
+<item href="#ref-3"/>
+<item href="#ref-4"/>
+<item href="#ref-5"/>
+</SOAP-ENC:Array>
+<a2:куст id="ref-2" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/lab14_XAMARIN/lab14%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<length>1</length>
+<_x003C_prevalence_x003E_k__BackingField>0.5</_x003C_prevalence_x003E_k__BackingField>
+<_x003C_condition_x003E_k__BackingField>0.5</_x003C_condition_x003E_k__BackingField>
+</a2:куст>
+<a2:куст id="ref-3" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/lab14_XAMARIN/lab14%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<length>2</length>
+<_x003C_prevalence_x003E_k__BackingField>0.5</_x003C_prevalence_x003E_k__BackingField>
+<_x003C_condition_x003E_k__BackingField>0.5</_x003C_condition_x003E_k__BackingField>
+</a2:куст>
+<a2:куст id="ref-4" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/lab14_XAMARIN/lab14%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<length>3</length>
+<_x003C_prevalence_x003E_k__BackingField>0.5</_x003C_prevalence_x003E_k__BackingField>
+<_x003C_condition_x003E_k__BackingField>0.5</_x003C_condition_x003E_k__BackingField>
+</a2:куст>
+<a2:куст id="ref-5" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/lab14_XAMARIN/lab14%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<length>4</length>
+<_x003C_prevalence_x003E_k__BackingField>0.5</_x003C_prevalence_x003E_k__BackingField>
+<_x003C_condition_x003E_k__BackingField>0.5</_x003C_condition_x003E_k__BackingField>
+</a2:куст>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

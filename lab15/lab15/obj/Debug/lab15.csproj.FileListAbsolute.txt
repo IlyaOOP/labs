@@ -1,0 +1,7 @@
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab15\lab15\bin\Debug\lab15.exe.config
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab15\lab15\bin\Debug\lab15.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab15\lab15\bin\Debug\lab15.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab15\lab15\obj\Debug\lab15.csprojAssemblyReference.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab15\lab15\obj\Debug\lab15.csproj.CoreCompileInputs.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab15\lab15\obj\Debug\lab15.exe
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab15\lab15\obj\Debug\lab15.pdb

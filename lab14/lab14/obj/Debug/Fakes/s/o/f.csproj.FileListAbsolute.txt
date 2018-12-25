@@ -1,0 +1,10 @@
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab14\lab14\obj\Debug\Fakes\s\b\System.4.0.0.0.Fakes.xml
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab14\lab14\obj\Debug\Fakes\s\b\System.4.0.0.0.Fakes.dll
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab14\lab14\obj\Debug\Fakes\s\b\System.4.0.0.0.Fakes.pdb
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab14\lab14\obj\Debug\Fakes\s\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab14\lab14\obj\Debug\Fakes\s\b\ru\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab14\lab14\obj\Debug\Fakes\s\o\f.csprojAssemblyReference.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab14\lab14\obj\Debug\Fakes\s\o\f.csproj.CoreCompileInputs.cache
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab14\lab14\obj\Debug\Fakes\s\o\f.csproj.CopyComplete
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab14\lab14\obj\Debug\Fakes\s\o\System.4.0.0.0.Fakes.dll
+C:\Users\Илья\Desktop\Новая папка\OOP\labs\lab14\lab14\obj\Debug\Fakes\s\o\System.4.0.0.0.Fakes.pdb
